@@ -70,6 +70,14 @@ fun ParentDashboardBoard(
 
         ChildSwitcher(game.children, game.selectedChildId, onSelectChild)
 
+        game.selectedChild?.let { child ->
+            Text(
+                stringResource(R.string.child_learning_language, child.preferredLanguage.parentLabel),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+
         when (step) {
             DashboardStepMode.INTRO -> IntroStep(game)
             DashboardStepMode.ACTION -> ActionStep(
@@ -148,7 +156,8 @@ private fun IntroStep(game: ParentDashboardGame) {
     ) {
         Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("📊 Parent Dashboard", fontWeight = FontWeight.Bold, fontSize = 20.sp)
-            Text("Track learning progress across ABC, 123, Math, English, and Rhymes.")
+            Text("Track learning across ABC, 123, Math, English, Rhymes, and Missing & Match.")
+            Text("Missing & Match builds fill-in skills — also available in the KidsMatch app.")
             Text("${game.children.size} demo child profiles loaded locally.")
         }
     }
@@ -180,7 +189,15 @@ private fun ActionStep(
                         modifier = Modifier.fillMaxWidth(),
                         enabled = game.selectedChildId != null
                     ) {
-                        Text("Log ${subject.label} +10%")
+                        Column {
+                            Text("Log ${subject.label} +10%")
+                            if (subject == LearningSubject.MISSING_MATCH) {
+                                Text(
+                                    subject.parentDescription,
+                                    style = MaterialTheme.typography.labelSmall
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -211,6 +228,7 @@ private fun ReviewStep(game: ParentDashboardGame) {
 @Composable
 private fun SubjectCards(game: ParentDashboardGame) {
     val childId = game.selectedChildId ?: game.children.firstOrNull()?.id
+    val child = game.children.firstOrNull { it.id == childId }
     val progress = childId?.let { game.progressByChild[it] }.orEmpty()
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text("Subject Progress", fontWeight = FontWeight.SemiBold, color = parentPrimary)
@@ -223,8 +241,20 @@ private fun SubjectCards(game: ParentDashboardGame) {
             ) {
                 Column(Modifier.padding(16.dp)) {
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                        Text(sp.subject.label, fontWeight = FontWeight.Bold)
-                        Text("⭐ ${sp.stars}")
+                        Column {
+                            Text(sp.subject.label, fontWeight = FontWeight.Bold)
+                            if (sp.subject == LearningSubject.MISSING_MATCH) {
+                                Text(
+                                    sp.subject.parentDescription,
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            child?.preferredLanguage?.let { LanguageBadge(it) }
+                            Text("⭐ ${sp.stars}")
+                        }
                     }
                     Spacer(Modifier.height(8.dp))
                     LinearProgressIndicator(
@@ -245,8 +275,19 @@ private fun SubjectCards(game: ParentDashboardGame) {
 
 @Composable
 private fun WeeklyBarChart(report: List<WeeklyReportEntry>) {
+    val practicedLanguages = report.flatMap { it.languagesPracticed }.distinct()
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text("Weekly Activity", fontWeight = FontWeight.SemiBold, color = parentPrimary)
+        if (practicedLanguages.isNotEmpty()) {
+            Text(
+                stringResource(
+                    R.string.languages_practiced,
+                    practicedLanguages.joinToString(", ") { it.parentLabel }
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
         Card(
             modifier = Modifier.fillMaxWidth().height(160.dp),
             colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -272,6 +313,22 @@ private fun WeeklyBarChart(report: List<WeeklyReportEntry>) {
                 Text(entry.subject.label, style = MaterialTheme.typography.labelSmall, fontSize = 10.sp)
             }
         }
+    }
+}
+
+@Composable
+private fun LanguageBadge(language: LearningLanguage) {
+    Surface(
+        shape = RoundedCornerShape(8.dp),
+        color = parentAccent.copy(alpha = 0.15f)
+    ) {
+        Text(
+            text = language.badge,
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            color = parentPrimary
+        )
     }
 }
 

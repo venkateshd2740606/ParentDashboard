@@ -7,6 +7,7 @@ import com.parentdashboard.R
 import com.parentdashboard.domain.model.AppTheme
 import com.parentdashboard.domain.model.Difficulty
 import com.parentdashboard.domain.model.PlayerRank
+import com.parentdashboard.domain.model.LearningLanguage
 import com.parentdashboard.domain.model.PuzzleArchetype
 import com.parentdashboard.domain.model.SkillCategory
 
@@ -106,4 +107,13 @@ fun languageDisplayName(languageCode: String): String = when (languageCode) {
     "zh" -> stringResource(R.string.lang_zh)
     "zh-TW" -> stringResource(R.string.lang_zh_tw)
     else -> languageCode
+}
+
+@Composable
+@ReadOnlyComposable
+fun learningLanguageDisplayName(language: LearningLanguage): String = when (language) {
+    LearningLanguage.ENGLISH -> stringResource(R.string.learning_lang_english)
+    LearningLanguage.HINDI -> stringResource(R.string.learning_lang_hindi)
+    LearningLanguage.TELUGU -> stringResource(R.string.learning_lang_telugu)
+    LearningLanguage.TAMIL -> stringResource(R.string.learning_lang_tamil)
 }

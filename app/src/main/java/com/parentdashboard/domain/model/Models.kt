@@ -33,8 +33,20 @@ enum class P2PConnectionType(val displayName: String) {
 enum class P2PRole { HOST, CLIENT }
 enum class P2PSessionState { IDLE, ADVERTISING, DISCOVERING, CONNECTING, CONNECTED, ERROR }
 
-enum class LearningSubject(val label: String) {
-    ABC("ABC"), NUM123("123"), MATH("Math"), ENGLISH("English"), RHYMES("Rhymes")
+enum class LearningLanguage(val childLabel: String, val parentLabel: String, val badge: String) {
+    ENGLISH("English", "English", "EN"),
+    HINDI("हिंदी", "Hindi", "HI"),
+    TELUGU("తెలుగు", "Telugu", "TE"),
+    TAMIL("தமிழ்", "Tamil", "TA")
+}
+
+enum class LearningSubject(val label: String, val parentDescription: String = "") {
+    ABC("ABC", "Letter recognition"),
+    NUM123("123", "Number skills"),
+    MATH("Math", "Addition and subtraction"),
+    ENGLISH("English", "Reading and vocabulary"),
+    RHYMES("Rhymes", "Songs and rhythm"),
+    MISSING_MATCH("Missing & Match", "Fill-in puzzles — also in KidsMatch app")
 }
 
 enum class DashboardStepMode { INTRO, ACTION, REVIEW }
@@ -75,7 +87,13 @@ data class PuzzleProfile(
 
 data class GenerationProfile(val taskOffsetModifier: Int = 0)
 
-data class ChildProfile(val id: String, val name: String, val age: Int, val avatarEmoji: String)
+data class ChildProfile(
+    val id: String,
+    val name: String,
+    val age: Int,
+    val avatarEmoji: String,
+    val preferredLanguage: LearningLanguage = LearningLanguage.ENGLISH
+)
 
 data class SubjectProgress(
     val subject: LearningSubject,
@@ -89,14 +107,16 @@ data class ProgressLogEntry(
     val subject: LearningSubject,
     val percent: Int,
     val stars: Int,
-    val timestamp: Long
+    val timestamp: Long,
+    val learningLanguage: LearningLanguage? = null
 )
 
 data class WeeklyReportEntry(
     val subject: LearningSubject,
     val totalStars: Int,
     val averagePercent: Int,
-    val sessionCount: Int
+    val sessionCount: Int,
+    val languagesPracticed: Set<LearningLanguage> = emptySet()
 )
 
 data class ParentDashboardLevel(
@@ -190,6 +210,7 @@ data class UserPreferences(
     val onboardingCompleted: Boolean = false, val consentGiven: Boolean = false,
     val analyticsEnabled: Boolean = true, val personalizedAds: Boolean = false,
     val language: String = "system",
+    val defaultLearningLanguage: LearningLanguage = LearningLanguage.ENGLISH,
     val unlockedThemes: Set<String> = setOf(AppTheme.SYSTEM.name, AppTheme.LIGHT.name, AppTheme.DARK.name)
 )
 

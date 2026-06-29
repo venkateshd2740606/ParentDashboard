@@ -12,8 +12,8 @@ object ParentDashboardEngine {
     private const val WEEK_MS = 7L * 24 * 60 * 60 * 1000
 
     fun demoChildren(): List<ChildProfile> = listOf(
-        ChildProfile("demo-aanya", "Aanya", 5, "👧"),
-        ChildProfile("demo-ravi", "Ravi", 7, "👦")
+        ChildProfile("demo-aanya", "Aanya", 5, "👧", LearningLanguage.HINDI),
+        ChildProfile("demo-ravi", "Ravi", 7, "👦", LearningLanguage.TELUGU)
     )
 
     fun demoProgress(): Map<String, List<SubjectProgress>> {
@@ -21,11 +21,13 @@ object ParentDashboardEngine {
         return mapOf(
             "demo-aanya" to listOf(
                 SubjectProgress(LearningSubject.ABC, 40, 8, today),
-                SubjectProgress(LearningSubject.NUM123, 25, 5, today)
+                SubjectProgress(LearningSubject.NUM123, 25, 5, today),
+                SubjectProgress(LearningSubject.MISSING_MATCH, 15, 3, today)
             ),
             "demo-ravi" to listOf(
                 SubjectProgress(LearningSubject.MATH, 55, 11, today),
-                SubjectProgress(LearningSubject.ENGLISH, 30, 6, today)
+                SubjectProgress(LearningSubject.ENGLISH, 30, 6, today),
+                SubjectProgress(LearningSubject.MISSING_MATCH, 20, 4, today)
             )
         )
     }
@@ -33,8 +35,9 @@ object ParentDashboardEngine {
     fun demoLog(): List<ProgressLogEntry> {
         val now = System.currentTimeMillis()
         return listOf(
-            ProgressLogEntry("demo-aanya", LearningSubject.ABC, 40, 2, now - 86400000),
-            ProgressLogEntry("demo-ravi", LearningSubject.MATH, 55, 3, now - 43200000)
+            ProgressLogEntry("demo-aanya", LearningSubject.ABC, 40, 2, now - 86400000, LearningLanguage.HINDI),
+            ProgressLogEntry("demo-ravi", LearningSubject.MATH, 55, 3, now - 43200000, LearningLanguage.TELUGU),
+            ProgressLogEntry("demo-aanya", LearningSubject.MISSING_MATCH, 15, 1, now - 3600000, LearningLanguage.HINDI)
         )
     }
 
@@ -81,9 +84,21 @@ object ParentDashboardEngine {
         )
     }
 
-    fun addChild(game: ParentDashboardGame, name: String, age: Int, avatarEmoji: String): ParentDashboardGame {
+    fun addChild(
+        game: ParentDashboardGame,
+        name: String,
+        age: Int,
+        avatarEmoji: String,
+        defaultLanguage: LearningLanguage = LearningLanguage.ENGLISH
+    ): ParentDashboardGame {
         if (name.isBlank()) return game
-        val child = ChildProfile(UUID.randomUUID().toString(), name.trim(), age.coerceIn(2, 12), avatarEmoji)
+        val child = ChildProfile(
+            id = UUID.randomUUID().toString(),
+            name = name.trim(),
+            age = age.coerceIn(2, 12),
+            avatarEmoji = avatarEmoji,
+            preferredLanguage = defaultLanguage
+        )
         val updatedChildren = game.children + child
         val defaultProgress = LearningSubject.entries.map { subject ->
             SubjectProgress(subject, 0, 0, dateFormat.format(Date()))
@@ -132,7 +147,14 @@ object ParentDashboardEngine {
                     if (s == subject) clampedStars else 0, today)
             }
         }
-        val entry = ProgressLogEntry(childId, subject, clampedPercent, clampedStars, now)
+        val entry = ProgressLogEntry(
+            childId = childId,
+            subject = subject,
+            percent = clampedPercent,
+            stars = clampedStars,
+            timestamp = now,
+            learningLanguage = game.selectedChild?.preferredLanguage
+        )
         return game.copy(
             progressByChild = game.progressByChild + (childId to updated),
             progressLog = game.progressLog + entry,
@@ -154,10 +176,17 @@ object ParentDashboardEngine {
                 subject = subject,
                 totalStars = entries.sumOf { it.stars },
                 averagePercent = if (entries.isEmpty()) 0 else entries.map { it.percent }.average().toInt(),
-                sessionCount = entries.size
+                sessionCount = entries.size,
+                languagesPracticed = entries.mapNotNull { it.learningLanguage }.toSet()
             )
         }
     }
+
+    fun languagesPracticedThisWeek(
+        game: ParentDashboardGame,
+        childId: String? = game.selectedChildId
+    ): Set<LearningLanguage> =
+        weeklyReport(game, childId).flatMap { it.languagesPracticed }.toSet()
 
     fun isTaskComplete(game: ParentDashboardGame): Boolean = when (game.level.taskType) {
         DashboardTaskType.WELCOME -> true

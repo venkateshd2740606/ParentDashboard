@@ -10,6 +10,7 @@ import com.parentdashboard.domain.model.ColorBlindMode
 import com.parentdashboard.domain.model.Difficulty
 import com.parentdashboard.domain.model.EconomyState
 import com.parentdashboard.domain.model.PuzzleProfile
+import com.parentdashboard.domain.model.LearningLanguage
 import com.parentdashboard.domain.model.UserPreferences
 import com.parentdashboard.domain.model.UserStats
 import com.parentdashboard.domain.repository.ChallengeRepository
@@ -57,6 +58,9 @@ class SettingsViewModel @Inject constructor(
             LocaleHelper.applyAppLocale(languageCode)
         }
     }
+
+    fun setDefaultLearningLanguage(language: LearningLanguage) =
+        update { it.copy(defaultLearningLanguage = language) }
 
     fun unlockTheme(themeId: String) {
         viewModelScope.launch { progressionRepository.unlockTheme(themeId) }

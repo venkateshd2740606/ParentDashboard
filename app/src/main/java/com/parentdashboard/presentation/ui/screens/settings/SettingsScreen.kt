@@ -15,7 +15,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.parentdashboard.R
 import com.parentdashboard.domain.model.AppTheme
 import com.parentdashboard.domain.model.ColorBlindMode
+import com.parentdashboard.domain.model.LearningLanguage
 import com.parentdashboard.presentation.ui.util.languageDisplayName
+import com.parentdashboard.presentation.ui.util.learningLanguageDisplayName
 import com.parentdashboard.presentation.ui.util.localizedName
 import com.parentdashboard.presentation.viewmodel.SettingsViewModel
 import com.parentdashboard.util.SupportedLanguages
@@ -31,6 +33,7 @@ fun SettingsScreen(
     val economy by viewModel.economy.collectAsStateWithLifecycle()
     var showThemeDialog by remember { mutableStateOf(false) }
     var showLanguageDialog by remember { mutableStateOf(false) }
+    var showDefaultLearningLanguageDialog by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -80,6 +83,15 @@ fun SettingsScreen(
                     Text(stringResource(R.string.app_language))
                     Text(
                         languageDisplayName(prefs.language),
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+            }
+            TextButton(onClick = { showDefaultLearningLanguageDialog = true }, modifier = Modifier.fillMaxWidth()) {
+                Column {
+                    Text(stringResource(R.string.default_learning_language))
+                    Text(
+                        learningLanguageDisplayName(prefs.defaultLearningLanguage),
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
@@ -158,6 +170,38 @@ fun SettingsScreen(
             },
             confirmButton = {
                 TextButton(onClick = { showLanguageDialog = false }) {
+                    Text(stringResource(R.string.close))
+                }
+            }
+        )
+    }
+
+    if (showDefaultLearningLanguageDialog) {
+        AlertDialog(
+            onDismissRequest = { showDefaultLearningLanguageDialog = false },
+            title = { Text(stringResource(R.string.default_learning_language)) },
+            text = {
+                Column {
+                    LearningLanguage.entries.forEach { language ->
+                        Row(
+                            Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                        ) {
+                            Text(learningLanguageDisplayName(language))
+                            RadioButton(
+                                selected = prefs.defaultLearningLanguage == language,
+                                onClick = {
+                                    viewModel.setDefaultLearningLanguage(language)
+                                    showDefaultLearningLanguageDialog = false
+                                }
+                            )
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showDefaultLearningLanguageDialog = false }) {
                     Text(stringResource(R.string.close))
                 }
             }

@@ -43,6 +43,13 @@
     <string name="congratulations">Task completed successfully!</string>
     <string name="step_progress">Step %1$d of %2$d</string>
     <string name="tap_next">Finish</string>
+    <string name="child_learning_language">Learning in: %1$s</string>
+    <string name="languages_practiced">Languages practiced: %1$s</string>
+    <string name="default_learning_language">Default learning language for new children</string>
+    <string name="learning_lang_english">English</string>
+    <string name="learning_lang_hindi">Hindi (हिंदी)</string>
+    <string name="learning_lang_telugu">Telugu (తెలుగు)</string>
+    <string name="learning_lang_tamil">Tamil (தமிழ்)</string>
     <string name="trace_mode_title">Review task</string>
     <string name="trace_done">Mark done</string>
     <string name="trace_complete">Task ready</string>

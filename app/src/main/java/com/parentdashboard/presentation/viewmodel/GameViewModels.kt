@@ -7,6 +7,7 @@ import com.parentdashboard.domain.model.ChallengeType
 import com.parentdashboard.domain.model.Difficulty
 import com.parentdashboard.domain.model.MultiplayerSession
 import com.parentdashboard.domain.model.PuzzleProfile
+import com.parentdashboard.domain.model.LearningLanguage
 import com.parentdashboard.domain.model.ParentDashboardGame
 import com.parentdashboard.domain.model.UserPreferences
 import com.parentdashboard.domain.model.UserStats
@@ -150,9 +151,15 @@ class GameViewModel @Inject constructor(
     private var campaignMode = false
     private var activeChallengeType: ChallengeType? = null
     private var endlessWave = 1
+    private var defaultLearningLanguage = LearningLanguage.ENGLISH
 
     init {
         refreshCoins()
+        viewModelScope.launch {
+            preferencesRepository.getUserPreferences().collect { prefs ->
+                defaultLearningLanguage = prefs.defaultLearningLanguage
+            }
+        }
     }
 
     private fun refreshCoins() {
@@ -393,7 +400,9 @@ class GameViewModel @Inject constructor(
 
     fun onAddChild(name: String, age: Int, avatarEmoji: String) {
         val current = _game.value ?: return
-        val updated = ParentDashboardEngine.addChild(current, name, age, avatarEmoji)
+        val updated = ParentDashboardEngine.addChild(
+            current, name, age, avatarEmoji, defaultLearningLanguage
+        )
         persistAndHandle(updated)
     }
 

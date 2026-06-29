@@ -13,6 +13,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.parentdashboard.domain.model.AppTheme
 import com.parentdashboard.domain.model.ColorBlindMode
 import com.parentdashboard.domain.model.Difficulty
+import com.parentdashboard.domain.model.LearningLanguage
 import com.parentdashboard.domain.model.UserPreferences
 import com.parentdashboard.util.LocaleHelper
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -43,6 +44,7 @@ class PreferencesDataStore @Inject constructor(
         val ANALYTICS = booleanPreferencesKey("analytics")
         val PERSONALIZED_ADS = booleanPreferencesKey("personalized_ads")
         val LANGUAGE = stringPreferencesKey("language")
+        val DEFAULT_LEARNING_LANGUAGE = stringPreferencesKey("default_learning_language")
         val UNLOCKED_THEMES = stringSetPreferencesKey("unlocked_themes")
     }
 
@@ -65,6 +67,11 @@ class PreferencesDataStore @Inject constructor(
             analyticsEnabled = prefs[Keys.ANALYTICS] ?: true,
             personalizedAds = prefs[Keys.PERSONALIZED_ADS] ?: false,
             language = prefs[Keys.LANGUAGE] ?: "system",
+            defaultLearningLanguage = runCatching {
+                LearningLanguage.valueOf(
+                    prefs[Keys.DEFAULT_LEARNING_LANGUAGE] ?: LearningLanguage.ENGLISH.name
+                )
+            }.getOrDefault(LearningLanguage.ENGLISH),
             unlockedThemes = prefs[Keys.UNLOCKED_THEMES] ?: setOf(
                 AppTheme.SYSTEM.name, AppTheme.LIGHT.name, AppTheme.DARK.name
             )
@@ -110,6 +117,7 @@ class PreferencesDataStore @Inject constructor(
             prefs[Keys.ANALYTICS] = updated.analyticsEnabled
             prefs[Keys.PERSONALIZED_ADS] = updated.personalizedAds
             prefs[Keys.LANGUAGE] = updated.language
+            prefs[Keys.DEFAULT_LEARNING_LANGUAGE] = updated.defaultLearningLanguage.name
             prefs[Keys.UNLOCKED_THEMES] = updated.unlockedThemes
             LocaleHelper.persistLanguage(context, updated.language)
         }
