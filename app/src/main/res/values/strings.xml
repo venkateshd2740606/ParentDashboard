@@ -50,6 +50,8 @@
     <string name="learning_lang_hindi">Hindi (हिंदी)</string>
     <string name="learning_lang_telugu">Telugu (తెలుగు)</string>
     <string name="learning_lang_tamil">Tamil (தமிழ்)</string>
+    <string name="learning_lang_kannada">Kannada (ಕನ್ನಡ)</string>
+    <string name="learning_lang_malayalam">Malayalam (മലയാളം)</string>
     <string name="trace_mode_title">Review task</string>
     <string name="trace_done">Mark done</string>
     <string name="trace_complete">Task ready</string>

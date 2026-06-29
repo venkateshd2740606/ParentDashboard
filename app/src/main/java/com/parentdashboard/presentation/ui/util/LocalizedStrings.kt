@@ -116,4 +116,6 @@ fun learningLanguageDisplayName(language: LearningLanguage): String = when (lang
     LearningLanguage.HINDI -> stringResource(R.string.learning_lang_hindi)
     LearningLanguage.TELUGU -> stringResource(R.string.learning_lang_telugu)
     LearningLanguage.TAMIL -> stringResource(R.string.learning_lang_tamil)
+    LearningLanguage.KANNADA -> stringResource(R.string.learning_lang_kannada)
+    LearningLanguage.MALAYALAM -> stringResource(R.string.learning_lang_malayalam)
 }

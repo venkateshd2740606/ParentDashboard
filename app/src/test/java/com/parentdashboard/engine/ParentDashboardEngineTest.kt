@@ -61,6 +61,21 @@ class ParentDashboardEngineTest {
         assertEquals(LearningLanguage.TAMIL, added.preferredLanguage)
     }
 
+    @Test fun addChild_supportsKannadaAndMalayalam() {
+        val level = TutorialLevels.getTutorialLevel(1)!!
+        var game = ParentDashboardEngine.createInitialGame(level)
+        game = ParentDashboardEngine.addChild(game, "Kavya", 5, "👧", LearningLanguage.KANNADA)
+        game = ParentDashboardEngine.addChild(game, "Arun", 6, "👦", LearningLanguage.MALAYALAM)
+        assertEquals(LearningLanguage.KANNADA, game.children[game.children.size - 2].preferredLanguage)
+        assertEquals(LearningLanguage.MALAYALAM, game.children.last().preferredLanguage)
+    }
+
+    @Test fun learningLanguage_hasSixOptions() {
+        assertEquals(6, LearningLanguage.entries.size)
+        assertEquals("KN", LearningLanguage.KANNADA.badge)
+        assertEquals("ML", LearningLanguage.MALAYALAM.badge)
+    }
+
     @Test fun demoChildren_havePreferredLanguages() {
         val children = ParentDashboardEngine.demoChildren()
         assertEquals(LearningLanguage.HINDI, children.first().preferredLanguage)

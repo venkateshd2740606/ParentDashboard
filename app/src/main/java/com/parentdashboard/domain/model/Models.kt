@@ -37,7 +37,9 @@ enum class LearningLanguage(val childLabel: String, val parentLabel: String, val
     ENGLISH("English", "English", "EN"),
     HINDI("हिंदी", "Hindi", "HI"),
     TELUGU("తెలుగు", "Telugu", "TE"),
-    TAMIL("தமிழ்", "Tamil", "TA")
+    TAMIL("தமிழ்", "Tamil", "TA"),
+    KANNADA("ಕನ್ನಡ", "Kannada", "KN"),
+    MALAYALAM("മലയാളം", "Malayalam", "ML")
 }
 
 enum class LearningSubject(val label: String, val parentDescription: String = "") {
