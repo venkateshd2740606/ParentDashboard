@@ -38,7 +38,7 @@
     <string name="hints">इशारे</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">इशारे बाहेर</string>
-    <string name="no_hints_message">इशाऱ्यांसाठी नाणी वापरा किंवा अधिक विनामूल्य इशारे मिळवण्यासाठी छोटी जाहिरात पहा.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">सूचनांसाठी जाहिरात पहा</string>
     <string name="next_level">पुढील स्तर</string>
     <string name="load_error_title">लोड करण्यात अक्षम</string>

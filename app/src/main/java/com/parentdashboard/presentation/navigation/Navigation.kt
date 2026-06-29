@@ -293,7 +293,6 @@ fun ParentDashboardNavHost(
                 timerVisible = preferences.timerVisible,
                 onNavigateBack = { navController.navigateUp() },
                 adManager = adManager,
-                adsEnabled = preferences.adsEnabled,
                 reducedMotion = preferences.reducedMotion
             )
         }

@@ -38,7 +38,7 @@
     <string name="hints">குறிப்புகள்</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">குறிப்புகள் இல்லை</string>
-    <string name="no_hints_message">மேலும் இலவச குறிப்புகளைப் பெற, குறிப்புகளுக்கு நாணயங்களைப் பயன்படுத்தவும் அல்லது குறுகிய விளம்பரத்தைப் பார்க்கவும்.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">குறிப்புகளுக்கு விளம்பரத்தைப் பார்க்கவும்</string>
     <string name="next_level">அடுத்த நிலை</string>
     <string name="load_error_title">ஏற்ற முடியவில்லை</string>

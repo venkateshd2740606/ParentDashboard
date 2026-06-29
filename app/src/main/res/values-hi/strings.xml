@@ -38,7 +38,7 @@
     <string name="hints">संकेत</string>
     <string name="hints_remaining">%1$d/3</string>
     <string name="no_hints_title">संकेत से बाहर</string>
-    <string name="no_hints_message">संकेतों के लिए सिक्कों का उपयोग करें या अधिक निःशुल्क संकेत अर्जित करने के लिए एक छोटा विज्ञापन देखें।</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">संकेत के लिए विज्ञापन देखें</string>
     <string name="next_level">अगला स्तर</string>
     <string name="load_error_title">भरने में असमर्थ</string>

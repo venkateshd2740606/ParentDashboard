@@ -38,7 +38,7 @@
     <string name="hints">సూచనలు</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">సూచనలు లేవు</string>
-    <string name="no_hints_message">సూచనల కోసం నాణేలను ఉపయోగించండి లేదా మరిన్ని ఉచిత సూచనలను సంపాదించడానికి చిన్న ప్రకటనను చూడండి.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">సూచనల కోసం ప్రకటనను చూడండి</string>
     <string name="next_level">తదుపరి స్థాయి</string>
     <string name="load_error_title">లోడ్ చేయడం సాధ్యపడలేదు</string>

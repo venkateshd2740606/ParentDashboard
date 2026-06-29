@@ -2,9 +2,6 @@
 
 import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.work.Configuration
 import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
@@ -44,11 +41,6 @@ class ParentDashboardApp : Application(), Configuration.Provider {
         remoteConfig.fetchAndActivate()
 
         adManager.initialize()
-        ProcessLifecycleOwner.get().lifecycle.addObserver(object : DefaultLifecycleObserver {
-            override fun onStart(owner: LifecycleOwner) {
-                adManager.showAppOpenAdIfAvailable()
-            }
-        })
 
         ChallengeWorker.schedule(this)
     }

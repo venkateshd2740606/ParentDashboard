@@ -38,7 +38,7 @@
     <string name="hints">സൂചനകൾ</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">സൂചനകൾ പുറത്ത്</string>
-    <string name="no_hints_message">കൂടുതൽ സൗജന്യ സൂചനകൾ നേടുന്നതിന് സൂചനകൾക്കായി നാണയങ്ങൾ ഉപയോഗിക്കുക അല്ലെങ്കിൽ ഒരു ചെറിയ പരസ്യം കാണുക.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">സൂചനകൾക്കായി പരസ്യം കാണുക</string>
     <string name="next_level">അടുത്ത ലെവൽ</string>
     <string name="load_error_title">ലോഡ് ചെയ്യാനായില്ല</string>

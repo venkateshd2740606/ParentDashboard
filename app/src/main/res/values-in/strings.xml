@@ -38,7 +38,7 @@
     <string name="hints">Hints</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">Tidak Ada Petunjuk</string>
-    <string name="no_hints_message">Tonton video singkat untuk mendapat 3 petunjuk!</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">Tonton Iklan untuk Petunjuk</string>
     <string name="next_level">Next Level</string>
     <string name="load_error_title">Unable to load</string>

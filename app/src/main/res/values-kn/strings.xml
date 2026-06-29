@@ -38,7 +38,7 @@
     <string name="hints">ಸುಳಿವುಗಳು</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">ಸುಳಿವುಗಳಿಂದ ಹೊರಗಿದೆ</string>
-    <string name="no_hints_message">ಸುಳಿವುಗಳಿಗಾಗಿ ನಾಣ್ಯಗಳನ್ನು ಬಳಸಿ ಅಥವಾ ಹೆಚ್ಚಿನ ಉಚಿತ ಸುಳಿವುಗಳನ್ನು ಗಳಿಸಲು ಸಣ್ಣ ಜಾಹೀರಾತನ್ನು ವೀಕ್ಷಿಸಿ.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">ಸುಳಿವುಗಳಿಗಾಗಿ ಜಾಹೀರಾತು ವೀಕ್ಷಿಸಿ</string>
     <string name="next_level">ಮುಂದಿನ ಹಂತ</string>
     <string name="load_error_title">ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ</string>

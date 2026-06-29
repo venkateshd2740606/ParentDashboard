@@ -38,7 +38,7 @@
     <string name="hints">Consejos</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">Sin pistas</string>
-    <string name="no_hints_message">Utilice monedas para obtener pistas o mire un anuncio breve para obtener más pistas gratuitas.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">Mira el anuncio para obtener pistas.</string>
     <string name="next_level">Siguiente nivel</string>
     <string name="load_error_title">No se puede cargar</string>

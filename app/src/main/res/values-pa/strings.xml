@@ -38,7 +38,7 @@
     <string name="hints">Hints</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">ਕੋਈ ਸੰਕੇਤ ਨਹੀਂ</string>
-    <string name="no_hints_message">3 ਸੰਕੇਤ ਲਈ ਛੋਟੀ ਵੀਡੀਓ ਦੇਖੋ!</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">ਸੰਕੇਤਾਂ ਲਈ ਇਸ਼ਤਿਹਾਰ ਦੇਖੋ</string>
     <string name="next_level">Next Level</string>
     <string name="load_error_title">Unable to load</string>

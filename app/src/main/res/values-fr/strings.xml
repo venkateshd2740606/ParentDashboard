@@ -38,7 +38,7 @@
     <string name="hints">Conseils</string>
     <string name="hints_remaining">%1$d / 3</string>
     <string name="no_hints_title">À court d\'indices</string>
-    <string name="no_hints_message">Utilisez des pièces pour obtenir des indices ou regardez une courte annonce pour gagner plus d\'indices gratuits.</string>
+    <string name="no_hints_message">You have used all hints for this lesson. Finish the lesson or go back home.</string>
     <string name="watch_ad_hints">Regardez l\'annonce pour obtenir des conseils</string>
     <string name="next_level">Niveau suivant</string>
     <string name="load_error_title">Impossible de charger</string>
