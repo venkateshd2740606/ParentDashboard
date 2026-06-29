@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ParentDashboard</string>
+
+    <!-- Home -->
+    <string name="home_title">ParentDashboard</string>
+    <string name="play_color_sort">Play Parent Dashboard</string>
+    <string name="play_screw_puzzle">Play Parent Dashboard</string>
+    <string name="new_game">New Game</string>
+    <string name="continue_game">Continue Game</string>
+    <string name="daily_challenge">Daily Challenge</string>
+    <string name="weekly_challenge">Weekly Challenge</string>
+    <string name="monthly_challenge">Monthly Challenge</string>
+    <string name="statistics">Statistics</string>
+    <string name="achievements">Achievements</string>
+    <string name="settings">Settings</string>
+    <string name="multiplayer">Multiplayer</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="coins_count">%d coins</string>
+    <string name="level_label">Level</string>
+    <string name="level_display">Level %d</string>
+    <string name="rank_display">Rank: %s</string>
+    <string name="day_streak">%d Day Streak!</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_beginner">Beginner</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_hard">Hard</string>
+    <string name="difficulty_expert">Expert</string>
+    <string name="difficulty_master">Master</string>
+    <string name="endless_mode">Endless Mode</string>
+    <string name="choose_difficulty">Choose Difficulty</string>
+
+    <!-- Game -->
+    <string name="color_sort">Parent Dashboard</string>
+    <string name="screw_puzzle">Parent Dashboard</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="hint">Hint</string>
+    <string name="game_paused">Game Paused</string>
+    <string name="puzzle_solved">Puzzle Solved!</string>
+    <string name="congratulations">Task completed successfully!</string>
+    <string name="step_progress">Step %1$d of %2$d</string>
+    <string name="tap_next">Finish</string>
+    <string name="trace_mode_title">Review task</string>
+    <string name="trace_done">Mark done</string>
+    <string name="trace_complete">Task ready</string>
+    <string name="quiz_mode_title">Confirm action</string>
+    <string name="time">Time</string>
+    <string name="moves">Moves</string>
+    <string name="hints">Hints</string>
+    <string name="hints_remaining">%1$d / 3</string>
+    <string name="no_hints_title">Out of hints</string>
+    <string name="no_hints_message">Watch a short ad to get 3 more hints.</string>
+    <string name="watch_ad_hints">Watch ad for hint</string>
+    <string name="hints_watch_ad_banner">No hints left — watch an ad to get 3 more!</string>
+    <string name="ad_loading_try_again">Ad is still loading. Try again in a moment.</string>
+    <string name="cancel">Cancel</string>
+    <string name="next_level">Next Level</string>
+    <string name="load_error_title">Unable to load</string>
+    <string name="load_error_game_not_found">Saved game not found.</string>
+    <string name="load_error_challenge_completed">This challenge is already completed.</string>
+    <string name="load_error_tutorial_not_found">Tutorial level not found.</string>
+    <string name="ok">OK</string>
+    <string name="back">Back</string>
+    <string name="close">Close</string>
+
+    <!-- Stats -->
+    <string name="games_played">Games Played</string>
+    <string name="games_won">Games Won</string>
+    <string name="win_rate">Win Rate</string>
+    <string name="current_streak">Current Streak</string>
+    <string name="longest_streak">Longest Streak</string>
+    <string name="perfect_games">Perfect Games</string>
+    <string name="pours_total">Total Pours</string>
+    <string name="screws_removed">Total Pours</string>
+    <string name="endless_high_score">Endless High Score</string>
+    <string name="total_xp">Total XP</string>
+    <string name="rank_label">Rank</string>
+    <string name="best_time">Best: %s</string>
+
+    <!-- Settings -->
+    <string name="appearance">Appearance</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="app_theme">App Theme</string>
+    <string name="high_contrast">High Contrast Mode</string>
+    <string name="reduced_motion">Reduced Motion</string>
+    <string name="color_blind_none">Standard Colors</string>
+    <string name="color_blind_deuteranopia">Deuteranopia</string>
+    <string name="color_blind_protanopia">Protanopia</string>
+    <string name="color_blind_tritanopia">Tritanopia</string>
+    <string name="font_scale_label">Font Scale</string>
+    <string name="sound_feedback">Sound &amp; Feedback</string>
+    <string name="haptic_feedback">Haptic Feedback</string>
+    <string name="sound_effects">Sound Effects</string>
+    <string name="show_timer">Show Timer</string>
+    <string name="themes_unlock">Unlockable Themes</string>
+    <string name="unlock_for_coins">Unlock (%d coins)</string>
+    <string name="unlocked">Unlocked</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="language">Language</string>
+    <string name="app_language">App Language</string>
+    <string name="language_system">System Default</string>
+
+    <!-- Challenges -->
+    <string name="challenge_difficulty">Difficulty: %s</string>
+    <string name="reward_coins">Reward: %d coins</string>
+    <string name="reward_xp">Reward: %d XP</string>
+    <string name="challenge_completed">Completed!</string>
+    <string name="start_challenge">Start Challenge</string>
+    <string name="challenge_history">History</string>
+    <string name="completed_with_moves">Completed in %d moves</string>
+    <string name="not_completed">Not completed</string>
+
+    <!-- Multiplayer P2P -->
+    <string name="two_device_play">2 Devices (Wi‑Fi / Bluetooth)</string>
+    <string name="two_device_play_desc">Play with a friend on another phone over Nearby, Wi‑Fi, or Wi‑Fi Direct.</string>
+    <string name="multiplayer_hub_desc">Play with a friend on one phone, two phones nearby, or challenge the AI bot.</string>
+    <string name="play_vs_ai">Play vs AI</string>
+    <string name="play_vs_ai_desc">Race the AI bot to solve the same puzzle. Beat it to win the round!</string>
+    <string name="choose_connection">Choose connection</string>
+    <string name="p2p_connection_nearby">Nearby (Bluetooth + Wi‑Fi)</string>
+    <string name="p2p_connection_wifi_lan">Same Wi‑Fi (IP)</string>
+    <string name="p2p_connection_wifi_direct">Wi‑Fi Direct</string>
+    <string name="p2p_nearby_desc">Uses Google Nearby — Bluetooth and Wi‑Fi automatically. Best for most devices.</string>
+    <string name="p2p_wifi_lan_desc">Both phones on the same Wi‑Fi. Host shares their IP address.</string>
+    <string name="p2p_wifi_direct_desc">Direct phone-to-phone Wi‑Fi without a router.</string>
+    <string name="host_game">Host</string>
+    <string name="join_game">Join</string>
+    <string name="host_ip_address">Host IP address</string>
+    <string name="share_host_ip">Share this IP with your friend: %1$s</string>
+    <string name="waiting_for_opponent">Waiting for opponent…</string>
+    <string name="searching_peers">Searching for nearby games…</string>
+    <string name="connecting">Connecting…</string>
+    <string name="opponent_connected">Opponent connected! Starting game…</string>
+    <string name="try_again">Try again</string>
+    <string name="msg_connection_failed">Connection failed. Check Bluetooth/Wi‑Fi permissions and try again.</string>
+    <string name="turn_opponent">Opponent\'s turn — please wait</string>
+    <string name="turn_your_turn">Your turn</string>
+
+    <!-- Multiplayer -->
+    <string name="same_device">Same Device</string>
+    <string name="two_player">2 Player (Same Device)</string>
+    <string name="same_device_desc">Pass the phone between two players. Take turns pouring colors into tubes.</string>
+    <string name="player_one">Player 1</string>
+    <string name="player_two">Player 2</string>
+    <string name="start_game">Start Game</string>
+    <string name="same_device_turn">%1$s turn • Score %2$d - %3$d</string>
+    <string name="same_device_round_won">Round complete! Score: %1$d - %2$d</string>
+    <string name="next_round">Next Round</string>
+
+    <!-- Puzzle Profile -->
+    <string name="puzzle_profile">Puzzle Profile</string>
+    <string name="view_puzzle_profile">View your puzzle DNA</string>
+    <string name="you_are">You are</string>
+    <string name="profile_empty_message">Play a few parent dashboard puzzles to unlock your personal puzzle profile.</string>
+    <string name="profile_games_analyzed">Based on %d completed puzzles</string>
+    <string name="profile_strength">Strength</string>
+    <string name="profile_weakness">Weakness</string>
+    <string name="adaptive_difficulty">Adaptive Difficulty</string>
+    <string name="adaptive_difficulty_desc">Future levels adjust locally to your play style. No server required.</string>
+    <string name="adaptive_easier">Next levels will be slightly easier while you improve.</string>
+    <string name="adaptive_balanced">Next levels stay balanced for your skill.</string>
+    <string name="adaptive_harder">Next levels will challenge your strengths.</string>
+
+    <!-- Seed Lab -->
+    <string name="seed_lab">Seed Lab</string>
+    <string name="seed_lab_desc">Every puzzle is generated from a seed. Share a seed with a friend and you both get the exact same level.</string>
+    <string name="level_seed">Level Seed</string>
+    <string name="level_number">Level Number</string>
+    <string name="play_seed">Play Seed</string>
+    <string name="generate_sample_seed">Generate Sample Seed</string>
+    <string name="invalid_seed">Enter a valid seed number.</string>
+    <string name="invalid_level_number">Enter a level number of 1 or higher.</string>
+    <string name="share_level">Share Level</string>
+    <string name="level_seed_display">Seed: %1$d</string>
+
+    <!-- Consent -->
+    <string name="consent_title">Privacy &amp; Consent</string>
+    <string name="consent_message">ParentDashboard uses analytics and ads to improve your experience. Choose your preferences below. You can change these anytime in Settings.</string>
+    <string name="consent_accept_all">Accept All</string>
+    <string name="consent_essential_only">Essential Only</string>
+    <string name="consent_deny">Decline Optional</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome to ParentDashboard</string>
+    <string name="onboarding_welcome_desc">Sort colored liquids into matching tubes with as few pours as possible.</string>
+    <string name="onboarding_screws_title">Pour Colors</string>
+    <string name="onboarding_screws_desc">Tap a tube to select it, then tap another tube to pour the top color.</string>
+    <string name="onboarding_layers_title">Fill Every Tube</string>
+    <string name="onboarding_layers_desc">Each tube must hold one color only. Use empty tubes to rearrange stacks.</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="tutorial_level">Tutorial %d</string>
+    <string name="tutorial_level_desc">Difficulty: %s</string>
+
+    <!-- Achievements -->
+    <string name="achievement_first_win">First Victory</string>
+    <string name="achievement_first_win_desc">Complete your first parent dashboard puzzle</string>
+    <string name="achievement_ten_wins">Puzzle Pro</string>
+    <string name="achievement_ten_wins_desc">Win 10 parent dashboard puzzles</string>
+    <string name="achievement_perfect">Flawless</string>
+    <string name="achievement_perfect_desc">Win without using hints</string>
+    <string name="achievement_streak_7">Week Warrior</string>
+    <string name="achievement_streak_7_desc">Maintain a 7-day streak</string>
+    <string name="achievement_master">Master Puzzler</string>
+    <string name="achievement_master_desc">Reach level 50</string>
+    <string name="achievement_endless">Endless Runner</string>
+    <string name="achievement_endless_desc">Reach wave 10 in Endless mode</string>
+    <string name="achievement_multiplayer">Pass &amp; Play</string>
+    <string name="achievement_multiplayer_desc">Play a same-device match</string>
+    <string name="achievement_tutorial">Quick Learner</string>
+    <string name="achievement_tutorial_desc">Complete the tutorial</string>
+
+    <!-- Accessibility -->
+    <string name="cd_tube_selected">Selected tube %d</string>
+    <string name="cd_tube">Tube %d</string>
+
+    <!-- App themes -->
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_amoled">AMOLED</string>
+    <string name="theme_neon">Neon</string>
+    <string name="theme_cyber">Cyber</string>
+    <string name="theme_space">Space</string>
+    <string name="theme_nature">Nature</string>
+
+    <!-- Player ranks -->
+    <string name="rank_novice">Novice</string>
+    <string name="rank_apprentice">Apprentice</string>
+    <string name="rank_puzzler">Puzzler</string>
+    <string name="rank_strategist">Strategist</string>
+    <string name="rank_expert">Expert</string>
+    <string name="rank_master">Master</string>
+    <string name="rank_grandmaster">Grandmaster</string>
+    <string name="rank_legend">Legend</string>
+
+    <!-- Puzzle archetypes -->
+    <string name="archetype_architect_title">The Architect</string>
+    <string name="archetype_architect_desc">You plan several moves ahead and rarely waste a turn.</string>
+    <string name="archetype_sprinter_title">The Sprinter</string>
+    <string name="archetype_sprinter_desc">You solve quickly with confident, direct moves.</string>
+    <string name="archetype_analyst_title">The Analyst</string>
+    <string name="archetype_analyst_desc">You take your time, prefer accuracy, and use hints when needed.</string>
+    <string name="archetype_explorer_title">The Explorer</string>
+    <string name="archetype_explorer_desc">You experiment with different approaches before finding the path.</string>
+    <string name="archetype_strategist_title">The Strategist</string>
+    <string name="archetype_strategist_desc">You excel when puzzles involve layered chains and depth.</string>
+
+    <!-- Skill categories -->
+    <string name="skill_pattern_recognition">Pattern Recognition</string>
+    <string name="skill_planning">Planning</string>
+    <string name="skill_speed">Speed</string>
+    <string name="skill_accuracy">Accuracy</string>
+    <string name="skill_complex_chains">Complex Chains</string>
+    <string name="skill_time_pressure">Time Pressure</string>
+    <string name="profile_percentile_top">Top %d%%</string>
+    <string name="profile_needs_practice">Needs practice</string>
+    <string name="achievement_xp_bonus">+%d XP</string>
+
+    <!-- Language names (shown in language picker) -->
+    <string name="lang_system">System Default</string>
+    <string name="lang_en">English</string>
+    <string name="lang_hi">Hindi</string>
+    <string name="lang_te">Telugu</string>
+    <string name="lang_ta">Tamil</string>
+    <string name="lang_kn">Kannada</string>
+    <string name="lang_ml">Malayalam</string>
+    <string name="lang_mr">Marathi</string>
+    <string name="lang_bn">Bengali</string>
+    <string name="lang_gu">Gujarati</string>
+    <string name="lang_pa">Punjabi</string>
+    <string name="lang_es">Spanish</string>
+    <string name="lang_fr">French</string>
+    <string name="lang_de">German</string>
+    <string name="lang_pt">Portuguese</string>
+    <string name="lang_it">Italian</string>
+    <string name="lang_ru">Russian</string>
+    <string name="lang_ar">Arabic</string>
+    <string name="lang_in">Indonesian</string>
+    <string name="lang_ja">Japanese</string>
+    <string name="lang_ko">Korean</string>
+    <string name="lang_zh">Chinese (Simplified)</string>
+    <string name="lang_zh_tw">Chinese (Traditional)</string>
+</resources>

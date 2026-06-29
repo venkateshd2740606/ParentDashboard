@@ -1,0 +1,19 @@
+﻿-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+-keepattributes Signature
+-keep class com.google.firebase.** { *; }
+-keep class kotlin.Metadata { *; }
+-dontwarn kotlin.**
+-keep class dagger.** { *; }
+-keep class javax.inject.** { *; }
+-keep @dagger.hilt.InstallIn class * { *; }
+-keep @dagger.hilt.android.HiltAndroidApp class * { *; }
+-keep @dagger.hilt.android.AndroidEntryPoint class * { *; }
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.**
+-keepclassmembers class kotlinx.coroutines.** { volatile <fields>; }
+-keep class com.google.gson.** { *; }
+-keep class com.google.android.gms.ads.** { *; }
+-keep class com.parentdashboard.data.** { *; }
+-keep class com.parentdashboard.domain.model.** { *; }
+-keep class com.google.android.play.core.integrity.** { *; }
